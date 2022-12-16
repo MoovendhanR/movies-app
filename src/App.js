@@ -17,7 +17,7 @@ function App() {
   console.log(movies) 
 
    useEffect(() => {
-   searchMovie("")
+   searchMovie("hello")
    },[])
    
 
