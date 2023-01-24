@@ -14,7 +14,7 @@ function App() {
     // const res = await fetch(`${API_URL}&s=${title}`)
     // const data =await res.json()
     // setMovies(data.Search)
-      axios.get(`${API_URL}&s=${title}`)
+      axios.get(`${API_URL}&s=${title}`,{referrerPolicy: "unsafe_url" })
       // .then((res) => console.log(res.data))
       .then((res) =>setMovies(res.data.Search))
   }
