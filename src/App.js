@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import "./app.css"
 import MovieCard from "./MovieCard";
@@ -10,9 +11,12 @@ function App() {
   const [searchItem,setSearchItem]=useState('')
 
   const searchMovie = async(title)=>{
-    const res = await fetch(`${API_URL}&s=${title}`)
-    const data =await res.json()
-    setMovies(data.Search)
+    // const res = await fetch(`${API_URL}&s=${title}`)
+    // const data =await res.json()
+    // setMovies(data.Search)
+      axios.get(`${API_URL}&s=${title}`)
+      // .then((res) => console.log(res.data))
+      .then((res) =>setMovies(res.data.Search))
   }
   console.log(movies) 
 
